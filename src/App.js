@@ -1,23 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
+import ResponsiveAppBar from './components/Header';
+import banner from './images/banner.jpg';
+import MediaCard from './components/Cards.js';
+import Footer from './components/Footer.js';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="header">
+        <ResponsiveAppBar />
+
+        <section>
+          <img
+            style={{ width: "93%", margin: "25px 40px" }}
+            src={banner} alt="" />
+        </section>
       </header>
+
+      <section className='main'>
+        <Typography variant="h5" >Fresh recommendations</Typography>
+
+      <MediaCard />
+      <MediaCard />
+      <MediaCard />
+      <MediaCard />
+      <MediaCard />
+      <MediaCard />
+      </section>
+
+      <section>
+        <Footer />
+      </section>
+
+
+
     </div>
   );
 }
