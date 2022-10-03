@@ -1,93 +1,138 @@
 import React from 'react';
+import { Box, Grid, Typography, List, ListSubheader, ListItemText, ListItemIcon, } from '@mui/material';
+import olxMobile from '../images/olxMobileApp.webp'
+import iconAppStore from '../images/iconAppStore.svg'
+import iconGooglePlay from '../images/iconGooglePlay.svg'
+import iconAppGallery from '../images/iconAppGallery.svg'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
-export default function Footer(props) {
-    let { } = props;
+export default function Footer() {
 
     return (
         <>
-            <footer className="containerfluid p-0">
-                <section className="row f1 m-0 flex-wrap olxApp">
-                    <div className="cont1 col-lg-4">
-                        <img src="./images/olxMobileApp.webp" alt="" />
-                    </div>
-                    <div className="cont2 my-5 px-5 col-lg-4">
-                        <h3 className="font-weight-bold">
+            <footer style={{ margin: 0 }}>
+                <Grid container m={0} sx={{ flexWrap: "wrap", backgroundColor: "#F7F8F8",  color:"#002f34" }}>
+                    <Grid item lg={4}>
+                        <img src={olxMobile} width="100%" alt="Olx Mobile App" />
+                    </Grid>
+                    <Grid item my={5} px={5} lg={4} borderRight={"2px solid #002f3433"}>
+                        <Typography variant="h4" fontWeight="bold">
                             TRY THE OLX APP
-                        </h3>
-                        <p>
+                        </Typography>
+                        <br />
+                        <Typography variant="body1">
                             Buy, sell and find just about anything using the App on your mobile.
-                        </p>
-                    </div>
-                    <div className="cont3 py-5 pl-5 col-lg-4 yourApp">
-                        <p className="font-weight-bold head">GET YOUR APP TODAY</p>
-                        <a href="#"><img src="./images/iconAppStore.svg" alt="" /></a>
-                        <a href=""><img src="./images/iconGooglePlay.svg" alt="" /></a>
-                        <a href=""><img src="./images/iconAppGallery.svg" alt="" /></a>
-                    </div>
-                </section>
+                        </Typography>
+                    </Grid>
+                    <Grid item py={5} pl={5} lg={4}>
+                        <Typography variant="body2" fontWeight="bold">
+                            GET YOUR APP TODAY
+                        </Typography>
+                        <br />
+                        <a href=""><img src={iconAppStore} mx={5} width={120} alt="App Store" /></a>
+                        <a href=""><img src={iconGooglePlay} mx={5} width={120} alt="Google Play" /></a>
+                        <a href=""><img src={iconAppGallery} mx={5} width={120} alt="App Gallery" /></a>
+                    </Grid>
+                </Grid>
 
 
-                <section className="d-flex f2">
-                    <div className="d-flex justify-content-between py-3 px-5 col-lg-8 col-md-8 col-sm-12 lists flex-wrap">
-                        <ul className="list-unstyled">
-                            <li className="font-weight-bold mb-1 head">POPULAR CATEGORIES</li>
-                            <li><a href="">Cars</a></li>
-                            <li><a href="">Flats for rent</a></li>
-                            <li><a href="">Mobile Phones</a></li>
-                            <li><a href="">Jobs</a></li>
-                        </ul>
-                        <ul>
-                            <li className="font-weight-bold mb-1 head">TRENDING SEARCHES</li>
-                            <li><a href="">Bikes</a></li>
-                            <li><a href="">Watches</a></li>
-                            <li><a href="">Books</a></li>
-                            <li><a href="">Dogs</a></li>
-                        </ul>
-                        <ul>
-                            <li className="font-weight-bold mb-1 head">ABOUT US</li>
-                            <li><a href="">About EMPG</a></li>
-                            <li><a href="">OLX Blog</a></li>
-                            <li><a href="">Contact Us</a></li>
-                            <li><a href="">OLX for Businesses</a></li>
-                        </ul>
-                        <ul>
-                            <li className="font-weight-bold mb-1 head">OLX</li>
-                            <li><a href="">Help</a></li>
-                            <li><a href="">Sitemap</a></li>
-                            <li><a href="">Terms of use</a></li>
-                            <li><a href="">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                    <div className="col-lg-1 col-md-1 col-sm-0 follow">
-                    </div>
+                <Grid container sx={{ display: "flex", borderTop: "2px solid lightgrey", backgroundColor: "#EBEEEF" }} m={0}>
 
-                    <div className="col-lg-3 d-flex flex-column justify-content-between col-lg-1 follow">
-                        <section>
-                            <p className="font-weight-bold pt-3 head">Follow Us</p>
-                            <ul className="d-flex icons m-0 p-0">
-                                <li><a href=""><i className="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href=""><i className="fa-brands fa-twitter"></i></a></li>
-                                <li><a href=""><i className="fa-solid fa-play"></i></a></li>
-                                <li><a href=""><i className="fa-brands fa-instagram"></i></a></li>
-                            </ul>
-                        </section>
-                        <section className="mb-4 justify-content-around">
-                            <a href=""><img className="w-25" src="./images/iconAppStore.svg" alt="" /></a>
-                            <a href=""><img className="w-25" src="./images/iconGooglePlay.svg" alt="" /></a>
-                            <a href=""><img className="w-25" src="./images/iconAppGallery.svg" alt="" /></a>
-                        </section>
-                    </div>
+                    <Grid item sx={{ display: "flex", justifyContent: "space-between" }} flexWrap="wrap" pt={1} pb={3} px={5} lg={8} md={8} sm={12} xs={12}>
+                        <List
+                            subheader={<ListSubheader fontWeight="bold" sx={{ bgcolor: 'transparent', padding: 0, fontSize: "14px", color: "#002F34" }}
+                            >POPULAR CATEGORIES</ListSubheader>}
+                        >
+                            <ListItemText><a href="">Cars</a></ListItemText>
+                            <ListItemText><a href="">Flats for rent</a></ListItemText>
+                            <ListItemText><a href="">Mobile Phones</a></ListItemText>
+                            <ListItemText><a href="">Jobs</a></ListItemText>
+                        </List>
+                        <List
+                            subheader={<ListSubheader fontWeight="bold" sx={{ bgcolor: 'transparent', padding: 0, fontSize: "14px", color: "#002F34" }}
+                            >TRENDING SEARCHES</ListSubheader>}
+                        >
+                            <ListItemText><a href="">Bikes</a></ListItemText>
+                            <ListItemText><a href="">Watches</a></ListItemText>
+                            <ListItemText><a href="">Books</a></ListItemText>
+                            <ListItemText><a href="">Dogs</a></ListItemText>
+                        </List>
+                        <List
+                            subheader={<ListSubheader fontWeight="bold" sx={{ bgcolor: 'transparent', padding: 0, fontSize: "14px", color: "#002F34" }}
+                            >ABOUT US</ListSubheader>}
+                        >
+                            <ListItemText><a href="">About EMPG</a></ListItemText>
+                            <ListItemText><a href="">OLX Blog</a></ListItemText>
+                            <ListItemText><a href="">Contact Us</a></ListItemText>
+                            <ListItemText><a href="">OLX for Businesses</a></ListItemText>
+                        </List>
+                        <List
+                            subheader={<ListSubheader fontWeight="bold" sx={{ bgcolor: 'transparent', padding: 0, fontSize: "14px", color: "#002F34" }}
+                            >OLX</ListSubheader>}
+                        >
+                            <ListItemText><a href="">Help</a></ListItemText>
+                            <ListItemText><a href="">Sitemap</a></ListItemText>
+                            <ListItemText><a href="">Terms of use</a></ListItemText>
+                            <ListItemText><a href="">Privacy Policy</a></ListItemText>
+                        </List>
+                    </Grid>
 
-                </section>
+                    <Grid item
+                        lg={1} md={1} sm={0}
+                    >
+                    </Grid>
 
-                <section class="m-0 py-3 px-4 d-flex justify-content-end lastbox">
-            <p class="font-weight-bold m-0 p-1">
-                Free Classifieds in Pakistan
-            </p>
-            <p class="m-0 p-1">
-                . &copy; 2006-2022 OLX
-            </p>
-        </section>
+                    <Grid item p={2} lg={1} sx={{ display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
+                        <Box>
+                            <Typography variant="p"
+                                sx={{ fontSize: "14px", color: "#002F34" }}
+                                pt={1}
+                                fontWeight={"bold"}>
+                                FOLLOW US
+                            </Typography>
+                            <List
+                                // m={0} p={0}
+                                sx={{ display: "flex", fontSize: "14px", color: "#002F34" }}
+                            >
+                                <ListItemIcon><a href="">{<FacebookIcon />}</a></ListItemIcon>
+                                <ListItemIcon><a href="">{<TwitterIcon />}</a></ListItemIcon>
+                                <ListItemIcon><a href="">{<PlayArrowIcon />}</a></ListItemIcon>
+                                <ListItemIcon><a href="">{<InstagramIcon />}</a></ListItemIcon>
+                            </List>
+                        </Box>
+                        <Box
+                            mb={3}
+                            sx={{ display: "flex", justifyContent: "space-between" }}
+                        >
+                            <a href=""><img width="90" src={iconAppStore} alt="App Store" /></a>
+                            <a href=""><img width="90" src={iconGooglePlay} alt="Google Play" /></a>
+                            <a href=""><img width="90" src={iconAppGallery} alt="App Gallery" /></a>
+                        </Box>
+                    </Grid>
+
+                </Grid>
+
+                <Box m={0} py={1} px={2}
+                    sx={{
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        alignItems: "center",
+                        color: "#ffffff",
+                        backgroundColor: "#002F34"
+                    }}
+                >
+                    <Typography variant="caption"
+                        fontWeight={"bold"}>
+                        Free Classifieds in Pakistan
+                    </Typography>
+                    <Typography variant="caption"
+                        m={0} p={1}>
+                        . &copy; 2006-2022 OLX
+                    </Typography>
+                </Box>
             </footer>
         </>
     )
